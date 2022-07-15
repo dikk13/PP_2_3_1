@@ -25,6 +25,16 @@ public class UserDaoImp implements UserDao {
    }
 
    @Override
+   public void delete(User user) {
+      sessionFactory.getCurrentSession().delete(user);
+   }
+
+   @Override
+   public void update(User user) {
+      sessionFactory.getCurrentSession().update(user);
+   }
+
+   @Override
    @SuppressWarnings("unchecked")
    public List<User> listUsers() {
       TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
