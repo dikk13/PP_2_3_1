@@ -30,8 +30,15 @@ public class UserDaoImp implements UserDao {
    }
 
    @Override
-   public void update(User user) {
+   public void update(int id, User user) {
       sessionFactory.getCurrentSession().update(user);
+   }
+
+   @Override
+   public User getUser(int id) {
+      TypedQuery<User> query=sessionFactory.getCurrentSession()
+              .createQuery("from User as user where user.id = :id");
+      return query.setParameter("id", id).getSingleResult();
    }
 
    @Override
