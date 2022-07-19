@@ -1,7 +1,4 @@
-package hiber.model;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+package web.model;
 
 import javax.persistence.*;
 
