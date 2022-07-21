@@ -6,14 +6,14 @@
 </head>
 <body>
 <form th:method="POST" th:action="@{/users}" th:object="${user}">
-    <label for="firstName">Enter name</label>
-    <input type="text" th:field="${firstName}" id="firstName"/>
+    <label for="firstName">Enter name:</label>
+    <input type="text" th:field="${user.firstName}" id="firstName"/>
     <br/>
-    <label for="lastName">Enter name</label>
-    <input type="text" th:field="${lastName}" id="lastName"/>
+    <label for="lastName">Enter LastName:</label>
+    <input type="text" th:field="${user.lastName}" id="lastName"/>
     <br/>
-    <label for="email">Enter name</label>
-    <input type="text" th:field="${email}" id="email"/>
+    <label for="email">Enter email:</label>
+    <input type="text" th:field="${user.email}" id="email"/>
     <br/>
     <input type="submit" value="Create!"/>
 </form>

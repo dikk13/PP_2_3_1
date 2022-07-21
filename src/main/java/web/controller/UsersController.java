@@ -1,19 +1,19 @@
 package web.controller;
 
-import web.config.AppConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import web.model.User;
 import web.service.UserService;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-//@RequestMapping("users")
+@RequestMapping("/users")
 public class UsersController {
 
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-    UserService userService = context.getBean(UserService.class);
+    private final UserService userService;
+    @Autowired
+    public UsersController(UserService userService) {this.userService = userService;}
 
     @GetMapping(value = "/users")
     public String getUsers(Model model) {
@@ -35,7 +35,7 @@ public class UsersController {
     @PostMapping()
     public String create(@ModelAttribute("user") User user) {
         userService.add(user);
-        return "redirect:/users";
+        return "redirect:/users/users";
     }
 
     @GetMapping("/{id}/update")
@@ -47,7 +47,7 @@ public class UsersController {
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user, @PathVariable("id") int id) {
         userService.update(id, user);
-        return "redirect:/users";
+        return "redirect:/users/users";
     }
 }
 
