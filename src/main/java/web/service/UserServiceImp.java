@@ -13,7 +13,7 @@ public class UserServiceImp implements UserService {
 
    private final UserDao userDao;
    @Autowired
-   public UserServiceImp(UserDao userDao) {this.userDao = userDao;};
+   public UserServiceImp(UserDao userDao) {this.userDao = userDao;}
 
    @Transactional
    @Override
