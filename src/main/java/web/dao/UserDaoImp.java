@@ -1,56 +1,46 @@
 package web.dao;
 
 import web.model.User;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
 public class UserDaoImp implements UserDao {
 
-//   private final EntityManager entityManager;
-//   @Autowired
-//   public UserDaoImp(EntityManager entityManager) {
-//      this.entityManager = entityManager;
-//   }
-
-   private final SessionFactory sessionFactory;
-
+   private final EntityManager entityManager;
    @Autowired
-   public UserDaoImp(SessionFactory sessionFactory){
-      this.sessionFactory = sessionFactory;
+   public UserDaoImp(EntityManager entityManager) {
+      this.entityManager = entityManager;
    }
 
    @Override
    public void add(User user) {
-      sessionFactory.getCurrentSession().save(user);
+      entityManager.persist(user);
    }
 
    @Override
    public void delete(User user) {
-      sessionFactory.getCurrentSession().delete(user);
+       entityManager.find(User.class, user.getId());
+       entityManager.remove(user);
    }
 
    @Override
    public void update(int id, User user) {
-      sessionFactory.getCurrentSession().update(user);
+      entityManager.find(User.class, id);
+      entityManager.merge(user);
    }
 
    @Override
    public User getUser(int id) {
-      TypedQuery<User> query=sessionFactory.getCurrentSession()
-              .createQuery("from User as user where user.id = :id");
-      return query.setParameter("id", id).getSingleResult();
+      return entityManager.find(User.class, id);
    }
 
    @Override
-   @SuppressWarnings("unchecked")
    public List<User> listUsers() {
-      TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
-      return query.getResultList();
+      return entityManager.createQuery("select u from User u", User.class).getResultList();
    }
 }
