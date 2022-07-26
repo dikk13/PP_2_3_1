@@ -12,8 +12,6 @@
     <list default="true" id="d088b4ec-a5aa-4090-8420-63ae07185940" name="Changes" comment="commit -a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/dao/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/dao/UserDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +211,7 @@
       <workItem from="1658295328026" duration="9626000" />
       <workItem from="1658305336862" duration="24253000" />
       <workItem from="1658468809488" duration="5637000" />
-      <workItem from="1658735896105" duration="14190000" />
+      <workItem from="1658735896105" duration="18405000" />
     </task>
     <task id="LOCAL-00001" summary="commit -a">
       <created>1657789081292</created>
@@ -257,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658744351805</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit -a">
+      <created>1658815581924</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1658815581924</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
