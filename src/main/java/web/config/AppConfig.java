@@ -1,6 +1,7 @@
 package web.config;
 
 import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +45,16 @@ public class AppConfig {
       factoryBean.setDataSource(getDataSource());
 
       Properties props = new Properties();
-      props.setProperty("hibernate.show_sql", "true");
-      props.setProperty("hibernate.hbm2ddl.auto", "update");
-      factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+      props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+      props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+      props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
+
+      JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+
+      factoryBean.setJpaVendorAdapter(vendorAdapter);
+      factoryBean.setDataSource(getDataSource());
+      factoryBean.setPackagesToScan("web");
+
       factoryBean.setJpaProperties(props);
       return factoryBean;
    }

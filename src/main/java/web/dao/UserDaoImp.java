@@ -10,12 +10,8 @@ import java.util.List;
 
 @Repository
 public class UserDaoImp implements UserDao {
-
-   private final EntityManager entityManager;
-   @Autowired
-   public UserDaoImp(EntityManager entityManager) {
-      this.entityManager = entityManager;
-   }
+   @PersistenceContext
+   private EntityManager entityManager;
 
    @Override
    public void add(User user) {
@@ -24,8 +20,7 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public void delete(User user) {
-       entityManager.find(User.class, user.getId());
-       entityManager.remove(user);
+      entityManager.remove(entityManager.contains(user) ? user : entityManager.merge(user));
    }
 
    @Override
