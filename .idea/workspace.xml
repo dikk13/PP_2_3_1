@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d088b4ec-a5aa-4090-8420-63ae07185940" name="Changes" comment="commit -a">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/update.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +80,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "E:/IDEA project/PP_3_1_1_SpringBoot",
     "project.structure.last.edited": "Modules",
@@ -212,6 +214,7 @@
       <workItem from="1658305336862" duration="24253000" />
       <workItem from="1658468809488" duration="5637000" />
       <workItem from="1658735896105" duration="18405000" />
+      <workItem from="1658910161865" duration="392000" />
     </task>
     <task id="LOCAL-00001" summary="commit -a">
       <created>1657789081292</created>
