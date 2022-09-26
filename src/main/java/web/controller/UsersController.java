@@ -52,7 +52,7 @@ public class UsersController {
 
     @DeleteMapping("/{id}")
     public String delete(@ModelAttribute("user") User user, @PathVariable("id") int id) {
-        userService.delete(user);
+        userService.delete(id, user);
         return "redirect:/users";
     }
 }
